@@ -1,0 +1,32 @@
+VERSION
+--------------
+    unreleased.
+    
+DESCRIPTION
+--------------
+	file-voodoo is a statistical tool for file-type identification.
+	The idea is to use "Cosine similarity" or "tf*idf" for both n-grams 
+	and offseted n-grams.
+	
+OPEN QUESTIONS
+--------------
+	- What smoothing technique to use?
+		As the sample data might not be large enough to give smooth probabilities
+		some idf will be very high and with a small tf, it would cause an errorneous detection.
+		E.g. to cover the minimum bigrams + offseted bigrams (256*256*MAX_OFFSET=256)
+		we will have 16 777 216 cases. The probabilities for a random item 
+		is  1/16 777 216, for a minimum smoothing you would need each item 10 times 
+		(e.g. this is 160mb of data containing only the first 256bytes, for each filetype)
+		
+	Resources:
+		http://stackoverflow.com/questions/3017455/ngram-idf-smoothing	
+			
+REQUIREMENTS
+--------------
+    python2.6
+    
+CONTACTS
+--------------
+
+    FUSR-U
+    
